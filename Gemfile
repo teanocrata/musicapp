@@ -20,6 +20,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+# Use devise as authentication solution https://github.com/plataformatec/devise
+gem 'devise'
+# figaro for secrets
+gem 'figaro'
+# rspotify is a ruby wrapper for the spotify web api
+gem 'rspotify'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
