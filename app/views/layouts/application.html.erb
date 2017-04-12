@@ -4,14 +4,21 @@
     <title>Musicapp</title>
     <%= csrf_meta_tags %>
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+      <nav class="w3-bar">
+        <%= link_to 'Tracks', tracks_path, :class => 'w3-bar-item w3-button' %>
+        <%= link_to 'Playlist', playlists_path, :class => 'w3-bar-item w3-button' %>
+        <% if user_signed_in? %>
+              <%= link_to 'LogOut', destroy_user_session_path, method: :delete, :class => 'w3-bar-item w3-button w3-right' %>
+            <% else %>
+              <%= link_to 'LogIn', new_user_session_path, :class => 'w3-bar-item w3-button w3-right' %>
+            <% end %>
+      </nav>
     <%= yield %>
   </body>
 </html>

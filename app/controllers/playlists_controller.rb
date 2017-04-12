@@ -1,4 +1,5 @@
 class PlaylistsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @playlists = Playlist.all
   end
@@ -16,7 +17,7 @@ class PlaylistsController < ApplicationController
     if @playlist.save
       redirect_to @playlist
     else
-      render :new 
+      render :new
     end
 
   end

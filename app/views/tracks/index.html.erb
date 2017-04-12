@@ -2,7 +2,7 @@
 
 <h1>Tracks</h1>
 
-<table>
+<table class="w3-table-all w3-card-4">
   <thead>
     <tr>
       <th>Title</th>
@@ -29,6 +29,8 @@
 <br>
 
 <%= link_to 'New Track', new_track_path %>
+
+<br>
 
 <%= form_tag(spotify_search_path, method: :get) do %>
   <%= text_field_tag :title %>
